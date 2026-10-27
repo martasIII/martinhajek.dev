@@ -84,7 +84,7 @@
           <article class="card">
             <span class="card__num">2</span>
             <h3>Step-by-step modernization</h3>
-            <p>From .NET Framework, WCF or WebForms to current .NET in small steps, without a big rewrite. The application keeps running the whole time and users barely notice.</p>
+            <p>From .NET Framework, WCF or WebForms to current .NET in small steps, without a big rewrite. Every step is backed by automated tests, the application keeps running the whole time and users barely notice.</p>
           </article>
           <article class="card">
             <span class="card__num">3</span>
@@ -158,6 +158,10 @@
           <li>Angular</li>
           <li>Blazor</li>
           <li>Unity3D</li>
+          <li>xUnit</li>
+          <li>NSubstitute</li>
+          <li>Testcontainers</li>
+          <li>NetArchTest</li>
           <li>Docker</li>
           <li>GitHub Actions</li>
           <li>Azure DevOps / TFS</li>
@@ -181,7 +185,7 @@
           </div>
           <ul class="checks">
             <li>modular monolith in .NET 10 and PostgreSQL, eight modules</li>
-            <li>over 300 tests, including architecture rules</li>
+            <li>over 300 automated tests: business rules, integration against a real PostgreSQL database, and architecture rules guarding module boundaries</li>
             <li>QR payments matched automatically from the bank, tax invoices and PDF vouchers</li>
             <li>every green change deploys itself via GitHub Actions and Docker</li>
             <li>key decisions written down as ADRs, trade-offs included</li>
@@ -194,7 +198,7 @@
       <div class="wrap">
         <h2>How I work</h2>
         <ul class="principles">
-          <li><strong>Small steps and tests</strong><span>Nothing breaks silently. Every change is verified before it reaches users.</span></li>
+          <li><strong>Tests as a safety net</strong><span>Before I touch legacy code, I cover its current behaviour with tests. Then I change it in small steps and nothing breaks silently.</span></li>
           <li><strong>Regular updates</strong><span>You always know what is done and what comes next. No black box.</span></li>
           <li><strong>Decisions on paper</strong><span>Why something was built the way it was can be traced even five years later.</span></li>
           <li><strong>AI tools, openly</strong><span>I use them to move faster. I still stand behind every line of code.</span></li>

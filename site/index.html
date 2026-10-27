@@ -84,7 +84,7 @@
           <article class="card">
             <span class="card__num">2</span>
             <h3>Postupná modernizace</h3>
-            <p>Z .NET Frameworku, WCF nebo WebForms na současný .NET po malých krocích, bez velkého přepisu. Aplikace celou dobu běží a&nbsp;uživatelé si změny skoro nevšimnou.</p>
+            <p>Z .NET Frameworku, WCF nebo WebForms na současný .NET po malých krocích, bez velkého přepisu. Každý krok jistí automatické testy, aplikace celou dobu běží a&nbsp;uživatelé si změny skoro nevšimnou.</p>
           </article>
           <article class="card">
             <span class="card__num">3</span>
@@ -158,6 +158,10 @@
           <li>Angular</li>
           <li>Blazor</li>
           <li>Unity3D</li>
+          <li>xUnit</li>
+          <li>NSubstitute</li>
+          <li>Testcontainers</li>
+          <li>NetArchTest</li>
           <li>Docker</li>
           <li>GitHub Actions</li>
           <li>Azure DevOps / TFS</li>
@@ -181,7 +185,7 @@
           </div>
           <ul class="checks">
             <li>modulární monolit v&nbsp;.NET 10 a&nbsp;PostgreSQL, osm modulů</li>
-            <li>přes 300 testů včetně architektonických pravidel</li>
+            <li>přes 300 automatických testů: byznys pravidla, integrace proti skutečné databázi PostgreSQL a&nbsp;architektonická pravidla, která hlídají hranice modulů</li>
             <li>QR platby s&nbsp;automatickým párováním z&nbsp;banky, daňové doklady a&nbsp;PDF poukazy</li>
             <li>každá zelená změna se sama nasadí přes GitHub Actions a&nbsp;Docker</li>
             <li>důležitá rozhodnutí sepsaná v&nbsp;ADR, včetně kompromisů</li>
@@ -194,7 +198,7 @@
       <div class="wrap">
         <h2>Jak pracuji</h2>
         <ul class="principles">
-          <li><strong>Malé kroky a&nbsp;testy</strong><span>Nic se nerozbije potichu. Každá změna je ověřená dřív, než se dostane k&nbsp;uživatelům.</span></li>
+          <li><strong>Testy jako pojistka</strong><span>Než sáhnu na starý kód, pokryji jeho dnešní chování testy. Pak měním po malých krocích a&nbsp;nic se nerozbije potichu.</span></li>
           <li><strong>Průběžný přehled</strong><span>Pravidelně víte, co je hotové a&nbsp;co přijde dál. Žádná černá skříňka.</span></li>
           <li><strong>Rozhodnutí na papíře</strong><span>Proč je něco udělané tak, jak je, se dá dohledat i&nbsp;za pět let.</span></li>
           <li><strong>AI nástroje otevřeně</strong><span>Používám je, abych byl rychlejší. Za každý řádek kódu ale ručím já.</span></li>
