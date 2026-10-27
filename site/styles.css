@@ -1,0 +1,520 @@
+/* Osobní web Martina Hájka. Bez frameworku a bez externích zdrojů: systémová písma,
+   žádné cookies, žádné skripty. Barvy jako tokeny, tmavý režim podle systému. */
+
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --text: #1c1b22;
+  --muted: #5d5a68;
+  --line: #e4e1ea;
+  --accent: #512bd4; /* fialová .NET */
+  --accent-soft: #efeafd;
+  --accent-text: #ffffff;
+  --radius: 14px;
+  --max: 68rem;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131218;
+    --surface: #1c1b23;
+    --text: #ecebf2;
+    --muted: #a7a3b5;
+    --line: #2e2c38;
+    --accent: #a48bff;
+    --accent-soft: #272040;
+    --accent-text: #131218;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 40rem) {
+  .wrap {
+    padding: 0 2rem;
+  }
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+}
+
+/* Hlavička */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header .wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 3.75rem;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.nav {
+  display: none;
+  gap: 1.25rem;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+@media (min-width: 48rem) {
+  .nav {
+    display: flex;
+  }
+}
+
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.lang:hover {
+  border-color: var(--accent);
+}
+
+.lang svg {
+  width: 1.35rem;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.12);
+}
+
+/* Úvod */
+
+.hero {
+  padding: 3.5rem 0 3rem;
+}
+
+.hero .wrap {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    padding: 5.5rem 0 4.5rem;
+  }
+
+  .hero .wrap {
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+  }
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+}
+
+.lead {
+  margin: 0 0 1.75rem;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.button--primary:hover {
+  filter: brightness(1.1);
+}
+
+.button--ghost:hover {
+  background: var(--accent-soft);
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.facts li::before {
+  content: "✓";
+  margin-right: 0.4rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Portrét v kruhu; jemné pozadí pod ním je vidět, než se obrázek načte. */
+.portrait {
+  justify-self: center;
+  width: min(16rem, 60vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--accent-soft);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+/* Na mobilu menší a nad textem, ať je obličej vidět hned. */
+@media (max-width: 47.99rem) {
+  .portrait {
+    order: -1;
+    justify-self: start;
+    width: 7.5rem;
+  }
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sekce */
+
+.section {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.section h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+}
+
+.section__intro {
+  margin: 0 0 2rem;
+  max-width: 40rem;
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card__num {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.9rem;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Zkušenosti */
+
+.timeline {
+  display: grid;
+  gap: 1.75rem;
+  margin: 0 0 2.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 48rem) {
+  .timeline li {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 2rem;
+  }
+}
+
+.timeline__when {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.timeline h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.timeline p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.9rem;
+}
+
+/* Ukázka práce */
+
+.showcase {
+  display: grid;
+  gap: 2rem;
+  padding: 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+@media (min-width: 48rem) {
+  .showcase {
+    grid-template-columns: 1.1fr 1fr;
+    padding: 2.25rem;
+  }
+}
+
+.showcase h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+}
+
+.showcase p {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+}
+
+.checks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.checks li {
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.checks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+/* Jak pracuji */
+
+.principles {
+  display: grid;
+  gap: 1.25rem 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 48rem) {
+  .principles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.principles strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.principles span {
+  color: var(--muted);
+}
+
+/* Kontakt */
+
+.contact {
+  text-align: center;
+}
+
+.contact .section__intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact__mail {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.contact .actions {
+  justify-content: center;
+}
+
+/* Patička */
+
+.footer {
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.footer p {
+  margin: 0 0 0.35rem;
+}
+
+/* Údaje, které ještě musí Martin doplnit — ať je nejde přehlédnout. */
+.todo {
+  background: #ffe9a8;
+  color: #4a3900;
+  padding: 0 0.25rem;
+  border-radius: 3px;
+}
