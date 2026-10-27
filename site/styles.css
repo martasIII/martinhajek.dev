@@ -398,6 +398,37 @@ p {
   font-size: 0.9rem;
 }
 
+.subhead {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+
+.cards--spaced {
+  margin-bottom: 2.25rem;
+}
+
+.card h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card .card__who {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card__list {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.card__list li + li {
+  margin-top: 0.35rem;
+}
+
 /* Ukázka práce */
 
 .showcase {
