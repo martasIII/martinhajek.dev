@@ -425,6 +425,11 @@ p {
   color: var(--muted);
 }
 
+.card__list strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .card__list li + li {
   margin-top: 0.35rem;
 }
