@@ -1,4 +1,4 @@
-# martin-hajek.cz
+# martinhajek.dev
 
 Osobní web Martina Hájka – senior .NET vývojáře na volné noze.
 
@@ -32,5 +32,5 @@ npx --yes serve site
 1. V Azure portálu založit **Static Web App**, plán **Free**, zdroj nasazení **Other**.
 2. Z ní zkopírovat **deployment token** do GitHub secretu `AZURE_STATIC_WEB_APPS_API_TOKEN`.
 3. Push do `main` web nasadí.
-4. **Custom domains:** přidat `martin-hajek.cz` (TXT záznam pro ověření + ALIAS/A na apex)
-   a `www.martin-hajek.cz` (CNAME na výchozí adresu aplikace). Certifikát vystaví Azure sám.
+4. **Custom domains:** přidat `martinhajek.dev` (TXT záznam pro ověření + ALIAS/A na apex)
+   a `www.martinhajek.dev` (CNAME na výchozí adresu aplikace). Certifikát vystaví Azure sám.

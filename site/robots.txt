@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://martin-hajek.cz/sitemap.xml
+Sitemap: https://martinhajek.dev/sitemap.xml
