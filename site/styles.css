@@ -546,3 +546,14 @@ p {
 .footer p {
   margin: 0 0 0.35rem;
 }
+
+/* Starší technologie pod nabídkou: stejné štítky, jen tlumenější. */
+.subhead--legacy {
+  margin-top: 2.25rem;
+}
+
+.tags--legacy li {
+  background: transparent;
+  border-style: dashed;
+  color: var(--muted);
+}
