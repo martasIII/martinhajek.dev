@@ -557,3 +557,26 @@ p {
   border-style: dashed;
   color: var(--muted);
 }
+
+/* Dostupnost nad nadpisem; měsíc, ne den, ať text hned nezastará. */
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.availability::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #1d9e75;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #1d9e75 25%, transparent);
+}
