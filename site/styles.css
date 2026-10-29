@@ -452,6 +452,15 @@ p {
   }
 }
 
+.showcase + .showcase {
+  margin-top: 1.5rem;
+}
+
+.showcase .eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+}
+
 .showcase h3 {
   margin: 0 0 0.5rem;
   font-size: 1.4rem;

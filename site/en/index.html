@@ -192,7 +192,7 @@
     <section class="section" id="work">
       <div class="wrap">
         <h2>Work sample</h2>
-        <p class="section__intro">Public-sector code belongs to the clients and I can't show it. That's why I have a project of my own you can look through in full.</p>
+        <p class="section__intro">Public-sector code belongs to the clients and I can't show it. That's why I have projects of my own you can look through in full.</p>
         <div class="showcase">
           <div>
             <h3>WakePark</h3>
@@ -208,6 +208,24 @@
             <li>QR payments matched automatically from the bank, tax invoices and PDF vouchers</li>
             <li>every green change deploys itself via GitHub Actions and Docker</li>
             <li>key decisions written down as ADRs, trade-offs included</li>
+          </ul>
+        </div>
+        <div class="showcase">
+          <div>
+            <p class="eyebrow">Hobby project</p>
+            <h3>Lookabout</h3>
+            <p>Point your phone at a city or a landscape and see what's what: sights, bridges, towers, mountain peaks. The same C# logic runs in a native app and in the browser, on Android and iPhone with nothing to install.</p>
+            <div class="actions">
+              <a class="button button--primary" href="https://github.com/martasIII/lookabout">Code on GitHub</a>
+              <a class="button button--ghost" href="https://martasiii.github.io/lookabout/">Try it on your phone</a>
+            </div>
+          </div>
+          <ul class="checks">
+            <li>shared .NET 10 library: gyroscope and compass fusion, calibration, geodesy and screen projection, over 140 tests</li>
+            <li>two thin layers on top: a native .NET MAUI app for Android and Blazor WebAssembly in the browser</li>
+            <li>moved from app to web without rewriting the logic, only a new layer for sensors and drawing</li>
+            <li>data from Wikidata and OpenStreetMap, with a custom tool to fetch it</li>
+            <li>every change is tested and the web deploys itself via GitHub Actions</li>
           </ul>
         </div>
       </div>
